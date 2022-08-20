@@ -2,34 +2,31 @@
 using System;
 using System.Linq;
 
-namespace BookStore.BookOperations.UpdateBook
+namespace BookStore.BookOperations.DeleteBook
 {
-    public class UpdateBookCommand
+    public class DeleteBookQuery
     {
+        public DeleteBookModel model { get; set; }
         public int BookId { get; set; }
-        public UpdateBookModel Model { get; set; }
         private readonly BookStoreDbContext _dbContext;
 
-
-        public UpdateBookCommand(BookStoreDbContext dbContext)
+        public DeleteBookQuery(BookStoreDbContext dbContext)
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext; 
         }
 
         public void Handle()
         {
             var book = _dbContext.Books.SingleOrDefault(x => x.Id == BookId);
-
             if (book is null)
-                throw new InvalidOperationException("Guncellenecek Kitap Bulanamadı");
-
-            book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
-            book.Title = Model.Title != default ? Model.Title : book.Title;
+            {
+               throw new InvalidOperationException("Silinecek kitap bulunamadı.");
+            }
+            _dbContext.Books.Remove(book);
             _dbContext.SaveChanges();
         }
     }
-
-    public class UpdateBookModel
+    public class DeleteBookModel
     {
         public string Title { get; set; }
         public int PageCount { get; set; }

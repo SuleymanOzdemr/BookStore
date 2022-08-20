@@ -1,4 +1,5 @@
 ﻿using BookStore.BookOperations.CreateBook;
+using BookStore.BookOperations.DeleteBook;
 using BookStore.BookOperations.GetBooks;
 using BookStore.BookOperations.GetDetail;
 using BookStore.BookOperations.UpdateBook;
@@ -87,17 +88,14 @@ namespace BookStore.Controllers
         {
             try
             {
-                var book = _contex.Books.SingleOrDefault(x => x.Id == id);
-                if (book is null)
-                {
-                    return BadRequest();
-                }
-                _contex.Books.Remove(book);
-                _contex.SaveChanges();
+                DeleteBookQuery query = new DeleteBookQuery(_contex);
+                query.BookId = id; 
+                query.Handle();
             }
+
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                return BadRequest(e.Message);
             }
             return Ok();
         }
