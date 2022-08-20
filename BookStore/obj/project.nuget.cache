@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mHG5WJpqCo+UW0SQQ3IsU0bhTreXTIVkJkRhiIB+haywE5Yl1PnTuOr7d7Wz0C+QQuNa4IK1UzMH1cpYMdEFMg==",
+  "dgSpecHash": "IKIpf7ThFib+5DCy51Yvxe26OnbbrQn69IJHEzRPaNoaJla+Z5ZYcIPaq7/nVdEo4xUn8dCcErA9J7VUPpOGeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\BookStore.csproj",
+  "projectFilePath": "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CasperPc3\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\CasperPc3\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",

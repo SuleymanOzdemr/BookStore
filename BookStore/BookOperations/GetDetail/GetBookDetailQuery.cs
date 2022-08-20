@@ -1,4 +1,5 @@
-﻿using BookStore.DBOperations;
+﻿using BookStore.Common;
+using BookStore.DBOperations;
 using System;
 using System.Linq;
 
@@ -24,6 +25,7 @@ namespace BookStore.BookOperations.GetDetail
             BookDetailViewModel vm = new BookDetailViewModel();
             vm.Title = book.Title;
             vm.PublishDate = book.PublishDate.Date.ToString("dd/mm/yyyy");
+            vm.Genre = ((GenreEnum)book.GenreId).ToString();
             return vm;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using BookStore.BookOperations.CreateBook;
 using BookStore.BookOperations.GetBooks;
 using BookStore.BookOperations.GetDetail;
+using BookStore.BookOperations.UpdateBook;
 using BookStore.DBOperations;
 using BookStore.Entity;
 using Microsoft.AspNetCore.Mvc;
@@ -64,16 +65,20 @@ namespace BookStore.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        public ActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            var book = _contex.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
-                return BadRequest();
-            book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
-            book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
-            book.PublishDate = updatedBook.PublishDate != default ? updatedBook.PublishDate : book.PublishDate;
-            book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
-            _contex.SaveChanges();
+           UpdateBookCommand command = new UpdateBookCommand(_contex);
+            try
+            {
+                command.BookId = id;
+                command.Model = updatedBook;
+                command.Handle();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
             return Ok();
         }
 

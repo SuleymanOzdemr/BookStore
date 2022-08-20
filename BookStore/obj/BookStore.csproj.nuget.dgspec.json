@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\BookStore.csproj": {}
+    "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\BookStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\BookStore.csproj": {
+    "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\BookStore.csproj",
+        "projectUniqueName": "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\BookStore.csproj",
+        "projectPath": "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\BookStore.csproj",
         "packagesPath": "C:\\Users\\CasperPc3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CasperPc3\\source\\repos\\BestPractices\\BookStore\\BookStore\\obj\\",
+        "outputPath": "C:\\Users\\CasperPc3\\Source\\Repos\\Bookstore\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
